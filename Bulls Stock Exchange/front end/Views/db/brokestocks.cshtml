@@ -1,0 +1,108 @@
+﻿
+@{
+    if (Session["email"] == null)
+    {
+        Response.Redirect("~/db/resultpage");
+    }
+}
+<!DOCtype html>
+<html>
+<head>
+    <title>buy stocks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .head1 {
+            font-size: 50px;
+            color: white;
+            font-weight: bolder;
+            margin-left: 400px;
+            font-family: 'Agency FB';
+        }
+
+        .head2 {
+            font-size: 12px;
+            margin-left: 550px;
+            margin-bottom: 15px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head3 {
+            font-size: 17px;
+            margin-left: 545px;
+            margin-bottom: 10px;
+            font-weight: normal;
+            color: white;
+        }
+
+
+        .button:active {
+            background-color: black;
+            box-shadow: 0 5px #272a3c;
+            transform: translateY(4px);
+        }
+
+        .button:hover {
+            background-color: white;
+        }
+
+        .button {
+            padding: 10px 25px;
+            font-size: 15px;
+            font-style: normal;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: black;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px #999;
+            margin-top: 20px;
+            margin-left: 300px;
+            margin-bottom: 20px;
+        }
+
+        .head4 {
+            /*padding:10px 5px 15px 20px;
+        top padding is 10px
+        right padding is 5px
+        bottom padding is 15px
+        left padding is 20px*/
+            font-size: 75px;
+            font-weight: bolder;
+            font-family: 'Script MT';
+            color: white;
+            border-radius: 60px;
+            text-shadow: 3px 3px 3px 3px #656565;
+            margin-bottom: 15px;
+            margin-left: 370px;
+        }
+
+            .head4:hover {
+                text-shadow: 2.5px 2.5px 2.5px 2.5px #a4fff7;
+                color: black;
+            }
+    </style>
+</head>
+<body style="background-color:black;">
+    <header>
+        <div><p class="head4">Broke Bulls</p></div>
+    </header>
+    <hr />
+    <br />
+    <!--<img src="https://i.ytimg.com/vi/13RBbY_mXV4/maxresdefault.jpg" alt="bull stock exchange" width="1200" height="864">-->
+    <a class="button " href="../../db/brokerastock">Broke Share</a>
+    <a class="button" href="../../db/sellprimetime">Prime Time to Sell</a>
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="../../db/bullsinvestor" role="button">Continue to Dashboard Home</a>
+    </p>
+    <hr />
+    <footer></footer>
+</body>
+</html>
+<!-- https://www.businessnewsdaily.com/images/i/000/003/828/original/shutterstock_115548781.jpg?1365111317 -->

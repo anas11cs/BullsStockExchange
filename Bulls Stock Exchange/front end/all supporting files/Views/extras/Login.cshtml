@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+@using dbconnectivity_C.Models;
+@model string
+<html>
+<head>
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="../DbTest/authenticate">
+        <input placeholder="User Id" id="userId" name="userId" />
+        <br />
+        <input placeholder="Password" id="password" name="password" />
+        <br />
+        <input type="submit" value="Log in" />  &nbsp;&nbsp;&nbsp; <label>@Model</label>
+        </form>
+    </div>
+</body>
+</html>

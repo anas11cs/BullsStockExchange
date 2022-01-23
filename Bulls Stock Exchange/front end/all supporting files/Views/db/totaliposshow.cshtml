@@ -1,0 +1,71 @@
+﻿@{
+    if (Session["compname"] == null)
+    {
+        Response.Redirect("~/db/resultpage");
+    }
+}
+<!DOCTYPE html>
+@using dbconnectivity_C.Models;
+@model int
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>totaliposshow</title>
+    <style>
+        .head1 {
+            font-size: 50px;
+            font-weight: bolder;
+            margin-left: 400px;
+            font-family: 'Agency FB';
+            margin-bottom: 1px;
+            color: white;
+            /* THE CHANGE TO ADD IS BELOW*/
+            text-shadow: 1px 2px 1px 2px #999;
+        }
+
+        .head2 {
+            font-size: 12px;
+            margin-left: 550px;
+            margin-bottom: 8px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head3 {
+            font-size: 80px;
+            margin-left: 400px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: white
+        }
+        .align {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 100px;
+            font-weight: 900;
+            font-family: Asap;
+            margin-left:50px;
+        }
+    </style>
+</head>
+<body style="background-color:black;">
+    <header>
+        <div class="head1">Bull's Stock Exchange</div>
+        <div class="head2">PAKISTAN</div>
+        <hr />
+
+        <div class="bik"><p class="head3">Total Ipos</p></div>
+    </header>
+    <div class="align"><label style="color:dodgerblue" ;>@Model</label></div>
+ 
+    <br />
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="../../db/bullscompany" role="button">Go to Dashboard</a>
+    </p>
+    <br />
+    <hr />
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿@{
+    if (Session["email"] == null)
+    {
+        Response.Redirect("~/db/resultpage");
+    }
+}
+<!DOCTYPE html>
+@using dbconnectivity_C.Models;
+
+@model List<prime>
+<html>
+<head>
+    <title>Market Capital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .head1 {
+            font-size: 50px;
+            font-weight: bolder;
+            margin-left: 400px;
+            font-family: 'Agency FB';
+            margin-bottom: 1px;
+            color: white;
+            /* THE CHANGE TO ADD IS BELOW*/
+            text-shadow: 1px 2px 1px 2px #999;
+        }
+
+        .head2 {
+            font-size: 12px;
+            margin-left: 550px;
+            margin-bottom: 8px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head3 {
+            font-size: 10px;
+            margin-left: 415px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head4 {
+            /*padding:10px 5px 15px 20px;
+        top padding is 10px
+        right padding is 5px
+        bottom padding is 15px
+        left padding is 20px*/
+            font-size: 75px;
+            font-weight: bolder;
+            font-family: 'Script MT';
+            color: white;
+            border-radius: 60px;
+            text-shadow: 3px 3px 3px 3px #656565;
+            margin-bottom: 15px;
+            margin-left: 370px;
+        }
+
+            .head4:hover {
+                text-shadow: 2.5px 2.5px 2.5px 2.5px #a4fff7;
+                color: black;
+            }
+
+        .fnt {
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+
+        .lineclr {
+            background-color: black;
+        }
+    </style>
+</head>
+<body style="background:black">
+    <header>
+        <a class="head1" href="../../db/Index">Bull's Stock Exchange</a>
+        <div class="head2"> PAKISTAN</div>
+        <div class="head3">Intelligent - Stock Broking & Buying Platform for Investors</div>
+    </header>
+    <hr />
+    <div><p class="head4">High Bulls</p></div>
+    <div class="w3-container">
+
+        <table class="w3-table w3-pale-yellow">
+            <thead>
+                <tr class="w3-white w3-hover-grey w3-hover-text-white">
+                    <th class="fnt">Company Name</th>
+                    <th class="fnt">Value</th>
+                </tr>
+            </thead>
+            @{
+                if (Model != null)
+                {
+
+                    int count = 0;
+                    foreach (var item in Model)
+                    {
+                        if (count % 2 == 0)
+                        {
+                            <tr class="w3-hover-text-white w3-hover-black w3-text-black">
+                                <td>@item.compname</td>
+                                <td>@item.faceval</td>
+
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr class="w3-hover-text-black w3-hover-white w3-text-black">
+                                <td>@item.compname</td>
+                                <td>@item.faceval</td>
+                            </tr>
+                        }
+                        count++;
+
+                    }
+                }
+            }
+
+        </table>
+
+    </div>
+    <br />
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="../../db/Index" role="button">Continue to Home</a>
+    </p>
+    <hr />
+</body>
+</html> 

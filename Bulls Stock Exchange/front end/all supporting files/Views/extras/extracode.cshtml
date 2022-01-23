@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "extracode";
+}
+
+<h2>extracode</h2>
+<body style="background-color:black;">
+    <header>
+        <div class="head1">Bull's Stock Exchange</div>
+        <div class="head2">PAKISTAN</div>
+        <div class="head3">( COMPANY SIGN IN )</div>
+    </header>
+    <div class="align">
+        <h3 style="color:aliceblue">[ Company Name ]</h3>
+        <form action="../../db/authenticatecompany" method="post">
+
+            <div class="form__field">
+                <input placeholder="E.g:Bull's Stock Exchange" required name="companyname" id="companyname" type="text" class="form__input" pattern=".{6,}">
+                <span class="icon"></span>
+                <h3 style="color:aliceblue">[ Bank Account Number ]</h3>
+                <input placeholder="E.g:111110001111" required name="bankaccno" id="bacnkaccno" type="number" class="form__input" pattern=".{6,}">
+                <span class="icon"></span>
+                <input class="button" type="submit" value="SignIn" />
+            </div>
+        </form>
+    </div>
+    <br />
+    <!--<a class="button" type="submit" method="post" href="../../db/authenticatecompany">SignIn</a>-->
+    <!--<input type="submit" value="Sign In" class="button" />-->
+    <label style="color:red" ;>@Model</label>
+</body>
+hamza code below for session
+<!---<li class="navbar-right navbar-text">@Session["companyname"].ToString()</li>-->

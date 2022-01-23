@@ -1,0 +1,220 @@
+﻿<!DOCtype html>
+@using dbconnectivity_C.Models;
+@model string
+<html>
+<head>
+    <title>sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* helpers/alignment.css */
+
+        .align {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 13px;
+            font-weight: 900;
+            font-family: Asap;
+        }
+
+        /* helpers/icon.css */
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        /* layout/base.css */
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            color: #888;
+            font-family: sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            min-height: 100%;
+        }
+
+        /* modules/headline.css */
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5em;
+            color: #111;
+            margin-bottom: 1.5em;
+        }
+
+        /* modules/paragraph.css */
+
+        p {
+            margin-bottom: 1.5em;
+            margin-top: 1.5em;
+        }
+
+        /* modules/form.css */
+
+        input {
+            font: inherit;
+            outline: 0;
+        }
+
+        .form__field {
+            margin-left: 320px;
+        }
+
+            .form__field .icon {
+                /*right: 3em;/*shifted*/
+                /*top: 0.1em; /*added*/
+               
+                /*top: 50%;*/
+                /*transform: translateY(-55%)*/
+                
+            }
+
+        .form__input {
+            border-radius: 2em;
+            border-style: solid;
+            border-width: 3px;
+            font-size: 1.5rem;
+            padding: 0.5em 1em 0.5em 2em;
+            /*added*/
+            margin-left:60px;
+            margin-bottom:10px;
+        }
+
+            .form__input:valid {
+                border-color: forestgreen;
+            }
+
+                .form__input:valid + .icon::after {
+                    content: '😃';
+                }
+
+            .form__input:invalid {
+                border-color: firebrick;
+            }
+
+                .form__input:invalid + .icon::after {
+                    content: '😳';
+                }
+
+        .head1 {
+            font-size: 50px;
+            color: white;
+            font-weight: bolder;
+            margin-left: 395px;
+            font-family: 'Agency FB';
+        }
+
+        .head2 {
+            font-size: 12px;
+            margin-left: 540px;
+            margin-bottom: 15px;
+            font-weight: bolder;
+            color: white
+        }
+
+
+        .adj{
+            margin-left:510px;
+            margin-top:8px;
+        }
+        .button:active {
+            background-color: black;
+            box-shadow: 0 5px #272a3c;
+            transform: translateY(4px);
+        }
+
+        .button:hover {
+            background-color: white;
+        }
+
+        .button {
+            padding: 5px 10px;
+            font-size: 12px;
+            font-family: Bebas;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: black;
+            background-color: firebrick;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px #999;
+            
+            margin-left:120px;
+        }
+        .bik {
+            margin-top: 25px;
+            width: 243px;
+            height: 50px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: silver;
+            margin-left: 460px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 0 6px rgb(255, 255, 255);
+            /*padding:10px 5px 15px 20px;
+top padding is 10px
+right padding is 5px
+bottom padding is 15px
+left padding is 20px*/
+            border: solid 1px #cbc9c9;
+            font-size: 23.5px;
+            font-weight: 300;
+            font-family: 'Arial Rounded MT';
+            color: black;
+            border-radius: 60px;
+        }
+        .head3 {
+            margin-left: 33px;
+            margin-top: 7px;
+        }
+        .testbox {
+            margin: 20px auto;
+            margin-top: 15px;
+            width: 343px;
+            height: 130px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: silver;
+            margin-left: 410px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            border: solid 1px #cbc9c9;
+        }
+    </style>
+</head>
+<body style="background-color:black;">
+    <header>
+        <div class="head1">Bull's Stock Exchange</div>
+        <div class="head2">PAKISTAN</div>
+        <hr />
+
+        <div class="bik"><p class="head3">Admin's Domain</p></div>
+    </header>
+    <div class="testbox">
+        <form method="post" action="../../db/authenticateadmine">
+            <p class="align">[&nbsp;P a s s w o r d &nbsp;&nbsp;&nbsp;P r o t e c t e d &nbsp;]</p>
+            <!--div class="form__field">-->
+            <input placeholder="Must be 8 characters" name="pass" type="password" class="form__input" pattern=".{8,}" required>
+            <span class="icon"></span>
+            <!--for pop-up by site ->  oninvalid="alert('You must fill out the form!');" -->
+            <br />
+            <input class="button" type="submit" value="Authenticate">
+            <!--</div>-->
+        </form>
+    </div>
+    <div class="adj"><label style="color:red" ;>@Model</label></div>
+    <!-- <a class="button" href="../../db/resultpage">Sign In</a>-->
+    <hr />
+</body>
+</html>

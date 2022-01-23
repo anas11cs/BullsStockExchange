@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>kse-30</title>
+    <style>
+        .head1 {
+            font-size: 50px;
+            font-weight: bolder;
+            margin-left: 400px;
+            font-family: 'Agency FB';
+            margin-bottom: 1px;
+            color: white;
+            /* THE CHANGE TO ADD IS BELOW*/
+            text-shadow: 1px 2px 1px 2px #999;
+        }
+        .head2 {
+            font-size: 12px;
+            margin-left: 550px;
+            margin-bottom: 8px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head3 {
+            font-size: 10px;
+            margin-left: 440px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: white
+        }
+
+        .head4 {
+            font-size: 20px;
+            margin-left: 500px;
+            margin-bottom: 20px;
+            font-weight: bolder;
+            color: white;
+            text-shadow: 1px 0.5px 1px 0.5px #003bc8;
+        }
+        .body_sec {
+            margin-left: 480px;
+        }
+
+        .body_sec1 {
+            margin-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .body_sec2 {
+            margin-bottom: 20px;
+            margin-left: 10px;
+        }
+
+        .body_sec3 {
+            margin-left: 485px;
+        }
+
+        .foot {
+            margin-top: 20px
+        }
+
+        .testbox {
+            margin: 20px auto;
+            margin-top: 15px;
+            width: 450px;
+            height: 130px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: #ffffff;
+            margin-left: 360px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px #9a9a9a;
+            border: solid 1px #cbc9c9;
+        }
+        .testbox:hover {
+            box-shadow: 4.5px 8px 20px white;
+        }
+        .testbox1 {
+            margin: 20px auto;
+            margin-top: 15px;
+            width: 250px;
+            height: 150px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: #bfbfbf;
+            margin-left: 460px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px #ffffff;
+            border: solid 1px #cbc9c9;
+        }
+        .testbox1:hover {
+            box-shadow: 3px 6px 15px white;
+        }
+
+        .align2 {
+            margin-top: 5px;
+            font-size: 60px;
+            color: black;
+            margin-left: 45px;
+            font-family: Arial 'Arial Rounded MT';
+            font-weight: 600;
+            text-shadow: 2px 1px 2px 1px #272a3c;
+        }
+
+        .align {
+            margin-top: 0px;
+            font-size: 40px;
+            color: black;
+            margin-left: 20px;
+            font-family: Arial 'Arial Rounded MT';
+            font-weight: 600;
+            text-shadow: 2px 1px 2px 1px #272a3c;
+        }
+        .align1 {
+            margin-top: 0px;
+            font-size: 20px;
+            color: black;
+            margin-left: 34px;
+            font-family: Arial 'Arial Rounded MT';
+            font-weight: 600;
+            text-shadow: 1px 0.5px 1px 0.5px #272a3c;
+        }
+        .datee{
+            margin-left:155px;
+            font-size:10px;
+        }
+        .styld {
+            margin-left:90px;
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+        .styld1 {
+            margin-left: 75px;
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+       .styld2 {
+            margin-left: 52px;
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+        .styld3 {
+            margin-left: 44px;
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+        .lineclr {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body style="background:black">
+    <header>
+        <a class="head1" href="../../db/Index">Bull's Stock Exchange</a>
+        <div class="head2"> PAKISTAN</div>
+        <div class="head3">Intelligent - Stock Broking & Buying Platform for Investors</div>
+        <div class="head4">KSE-30 Summary</div>
+    </header>
+    <hr />
+    <div class="testbox">
+        <p class="align2">Kse-30 Index</p>
+        <p class="datee">Updated at : @DateTime.Now.ToString("MM/dd/yyyy hh:mm tt")</p>
+    </div>
+    <div class="testbox1">
+        <p class="styld">Today</p>
+        <div class="lineclr"><hr /></div>
+        <p class="align">@Model.today</p>
+    </div>
+
+    <div class="testbox1">
+        <p class="styld1">Yesterday</p>
+        <div class="lineclr"><hr /></div>
+        <p class="align">@Model.previousday</p>
+
+    </div>
+
+    <div class="testbox1">
+        <p class="styld2">Month Index</p>
+        <div class="lineclr"><hr /></div>
+        <p class="align">@Model.currentmonth</p>
+    </div>
+
+    <div class="testbox1">
+        <p class="styld3">Market Situation</p>
+        <div class="lineclr"><hr /></div>
+        <p class="align1">@Model.comparison</p>
+    </div>
+
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="../../db/Index" role="button">Continue to Home</a>
+    </p>
+    <hr />
+</body>
+</html>

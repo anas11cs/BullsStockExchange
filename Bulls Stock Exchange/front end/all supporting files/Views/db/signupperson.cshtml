@@ -1,0 +1,376 @@
+﻿<!DOCtype html>
+@using dbconnectivity_C.Models;
+@model string
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sign In</title>
+    <style>
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+        pre, form, fieldset, input, textarea, p, blockquote, th, td {
+            padding: 0;
+            margin: 0;
+        }
+
+        fieldset, img {
+            border: 0
+        }
+
+        ol, ul, li {
+            list-style: none
+        }
+
+        :focus {
+            outline: none
+        }
+
+        body, input, textarea, select {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #4c4c4c;
+        }
+
+        html {
+            background-color: #ffffff;
+        }
+
+        .testbox {
+            margin: 20px auto;
+            margin-top: 15px;
+            width: 343px;
+            height: 985px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: silver;
+            margin-left: 410px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            border: solid 1px #cbc9c9;
+        }
+
+        form {
+            margin: 0 30px;
+        }
+
+        label.radio {
+            cursor: pointer;
+            text-indent: 35px;
+            overflow: visible;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+            label.radio:before {
+                background: #3a57af;
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+            }
+
+            label.radio:after {
+                opacity: 0;
+                content: '';
+                position: absolute;
+                width: 0.5em;
+                height: 0.25em;
+                background: transparent;
+                top: 7.5px;
+                left: 4.5px;
+                border: 3px solid #ffffff;
+                border-top: none;
+                border-right: none;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+
+        hr {
+            color: #a9a9a9;
+            opacity: 0.3;
+        }
+
+        input[type=text], input[type=password], input[type=number],input[type=email],input[type=date] {
+            width: 250px;
+            height: 33px;
+            -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+            -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px;
+            border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
+            border: solid 3px #353b5b;
+            border-radius: 15px;
+            background-color: #fff;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+            box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+            margin-left: 15px;
+            margin-top: 8px;
+            padding-left: 10px;
+            font-size: 13px;
+            font-family: 'Arial Rounded MT';
+            /*border-radius: 2em;
+                    border-style: solid;
+                    border-width: 3px;
+                    font-size: 1.5rem;
+                    padding: 0.5em 1em 0.5em 2em;
+                    /*added*/
+            /* margin-left: 460px;
+                    */
+        }
+
+        .accounttype {
+            margin-left: 8px;
+            margin-top: 20px;
+        }
+
+
+
+        .head1 {
+            margin-top: 50px;
+            font-size: 50px;
+            color: white;
+            font-weight: bolder;
+            margin-left: 400px;
+            font-family: 'Agency FB';
+        }
+
+        .bik {
+            margin-top: 25px;
+            width: 343px;
+            height: 70px;
+            -webkit-border-radius: 8px/7px;
+            -moz-border-radius: 8px/7px;
+            border-radius: 8px/7px;
+            background-color: silver;
+            margin-left: 410px;
+            -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+            box-shadow: 0 6px rgb(255, 255, 255);
+            /*padding:10px 5px 15px 20px;
+        top padding is 10px
+        right padding is 5px
+        bottom padding is 15px
+        left padding is 20px*/
+            border: solid 1px #cbc9c9;
+            font-size: 35px;
+            font-weight: bolder;
+            font-family: 'Script MT';
+            color: black;
+            border-radius: 60px;
+        }
+
+        .head2 {
+            font-size: 12px;
+            margin-left: 550px;
+            margin-bottom: 15px;
+            font-weight: bolder;
+            color: white;
+            font-family: Assistant;
+            font-weight: bold;
+        }
+
+        .head3 {
+            margin-left: 43px;
+            margin-top: 11px;
+        }
+
+        .button:active {
+            background-color: black;
+            box-shadow: 0 5px #272a3c;
+            transform: translateY(4px);
+        }
+
+        .button:hover {
+            background-color: firebrick;
+        }
+
+        .button {
+            padding: 5px 10px;
+            font-size: 20px;
+            font-family: 'Aurulent Sans';
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            background-color: #192048;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px #999;
+            margin-left: 95px;
+            margin-top: 15px;
+        }
+
+        .indhead {
+            margin-top: 15px;
+            color: black;
+            font-size: 20px;
+            font-weight: bolder;
+            font-family: Aaargh;
+        }
+
+        .cmpgen {
+            margin-top: 5.5px;
+            margin-left: 105px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+
+        .cmpgen2 {
+            margin-top: 5.5px;
+            margin-left: 108px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+        .dropdon {
+            margin-top: 5px;
+            margin-left: 40px;
+            margin-bottom: 4px;
+            border: solid 3px #353b5b;
+            border-radius: 10px; /*makes curve*/
+        }
+
+        .constraints {
+            margin-top: 1px;
+            margin-left: 35px;
+            font-size: 14px;
+            font-family: Assistant;
+            color: slategray;
+            font-weight: 500;
+        }
+
+        .special {
+            margin-top: 7px;
+            margin-left: 78px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+
+        .special1 {
+            margin-top: 7px;
+            margin-left: 97px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+        .special2 {
+            margin-top: 7px;
+            margin-left: 93px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+        .sp3 {
+            margin-top: 7px;
+            margin-left: 90px;
+            font-size: 16px;
+            font-family: Assistant;
+            font-weight: 500;
+            color: black;
+        }
+        .lineclr {
+            background-color: black;
+        }
+
+        .adj {
+            margin-left: 80px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <header>
+        <div class="head1">Bull's Stock Exchange</div>
+        <div class="head2">PAKISTAN</div>
+
+        <hr />
+
+        <div class="bik"><p class="head3">Investor's SignUp</p></div>
+    </header>
+    <div>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+        <div class="testbox">
+            <form method="post" action="../../db/addperson">
+                <p class="indhead">Personal Details</p>
+                <p class="cmpgen"> < Name ></p>
+                <input type="text" required name="nameperson" id="namep" placeholder="max. length 50" />
+
+                <p class="cmpgen2"> < CNIC ></p>
+                <input type="password" id="cnicbank" required name="cnic" placeholder="Length must be 15" pattern=".{15,}" />
+                <p class="constraints">e.g : xxxxx-xxxxxxx-x</p>
+
+                <p class="sp3"> < Birth Date ></p>
+                <input type="date" required name="bdate" id="bd" />
+
+                <p class="special1"> < Country ></p>
+                <input type="text" required name="country" id="cntry" placeholder="Pakistan" value="Pakistan" />
+                <p class="constraints">max. length 25</p>
+
+                <div class="lineclr"><hr /></div>
+
+                <p class="indhead">PSX Account Info.</p>
+
+                <p class="special"> < PSX Acount No. ></p>
+                <input type="number" id="psxregno" required name="psxaccno" value="0" />
+                <p class="constraints">Not have yet enter "0"</p>
+
+                <div class="lineclr"><hr /></div>
+
+                <p class="indhead">Bank Details</p>
+                <p class="special2"> < Bank Name ></p>
+                <input type="text" id="name" required name="bankname" placeholder="max. length 50" />
+
+                <p class="special"> < Bank Account No. ></p>
+                <input type="password" id="bankaccno" required name="bankaccno" placeholder="Any Number of Digits" />
+
+                <div class="lineclr"><hr /></div>
+
+                <p class="indhead">Sign In Details</p>
+                <p class="cmpgen"> < Email ></p>
+                <input type="email" id="lem" required name="email" placeholder="myemail@email.com" />
+
+                <p class="sp3"> < Password ></p>
+                <input type="password" id="lps" required name="pass" placeholder="Length must be 8 characters" pattern=".{8,}" />
+                <!--<a href="../../db/resultpage" class="button">SignUp</a>-->
+                <input type="submit" class="button" value="SignUp" />
+            </form>
+            <div class="adj"><label style="color:red" ;>@Model</label></div>
+        </div>
+    </div>
+    <br />
+    <p class="lead">
+        <a class="btn btn-primary btn-sm" href="../../db/signinperson" role="button">Click to Sign-In</a>
+    </p>
+    <br />
+</body>
+</html>
+<!---->
+<!--<input type="text" required name="nameperson" id="Name" placeholder="Name" />
+<input type="date" id="bdate" required name="bdate" placeholder="Birthdate:yyyy-mm-dd" />
+<input type="text" id="cnic" required name="cnic" placeholder="CNIC:xxxxx-xxxxxxx-x" />
+<input type="text" id="country" required name="country" placeholder="Country" />
+<input type="email" id="em" required name="email" placeholder="myemail@email.com" />
+<input type="password" id="pass" required name="pass" placeholder="Password" />
+<input type="password" id="bankaccno" required name="bankaccno" placeholder="Bank Acc No." />
+<input type="text" id="bankname" required name="bankname" placeholder="Bank Name" />
+<input type="number" id="psxaccno" required name="psxaccno" placeholder="Psx Acc No." />
+<br />
+<a class="button" type="submit" method="post" href="../../db/addperson">SignIn</a>-->
+ 

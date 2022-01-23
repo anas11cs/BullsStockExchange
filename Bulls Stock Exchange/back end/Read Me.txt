@@ -1,0 +1,6 @@
+-> Some of the functionalities here like queries are not correct, which are implemented correctly in the web files.
+-> stored procedure of buy a stock is not tested and implemented
+-> file named"procedure,quries,triggers" include those procedures that are implemented, and some like buy a stock not implemented
+-> those implemented correctly will be found in CRUD files so you can refer to see which are working and implemented
+-> transaction, autoincrement, javascript and functionalities like these are missing or it is done without them i.e something markable
+-> For the project details for backend or frontend and any correction email at : l174252@lhr.nu.edu.pk or l174322@lhr.nu.edu.pk or l174090@lhr.nu.edu.pk or l174147@lhr.nu.edu.pk
